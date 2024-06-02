@@ -1,0 +1,95 @@
+#detailsBtn{
+    color: #7C8DC1;            
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+}
+#todoBtn{
+    background-color: #A9B5DA;
+    border-radius: 20px;
+    border: none;
+    color: #232333;
+}
+.offcanvas-form{
+    width: 35% !important;
+    /* OffCanvasForm.scss */
+    .offcanvas-header .btn-close {
+        display: none;
+    }
+    .todo-status-bar{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 1rem;
+        border-bottom: 1px solid black;
+        #statusCol{
+            display: grid;
+            grid-template-columns: 20% 80%;
+            border: 1px solid black;
+            border-radius: 4px;
+            width: 60%;
+            #tickIcon{
+                background-image: url(../assets/check.png);
+                background-size: 24px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-position-x: 8px;
+            }
+            #statusBtn{
+                border: none;
+                border-radius: 8px;
+                background-color: transparent;
+                padding: 4px 8px;
+                align-items: center;
+            }
+        }
+        #statusCol:hover{
+            background-color: #1C1E2E;
+            #tickIcon{
+                background-image: url(../assets/check_light.png);
+                background-size: 18px;
+            }
+            #statusBtn{
+                color: white;
+                font-weight: 500;
+            }
+        }
+        #exitCol{
+            text-align: right;
+            #exitBtn{
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+    #descriptor-form{
+        .todo-descriptors:nth-child(1), .todo-descriptors:nth-child(2), .todo-descriptors:nth-child(3){
+            display: grid;
+            grid-template-columns: 20% 80%;
+            margin-bottom: 1rem;
+        }
+        .todo-descriptors:nth-child(3){
+            label{
+                padding: 4px 0px;
+            }
+            div{
+                text-align: center;
+                background-color: #A9B5DA;
+                width: 20%;
+                border-radius: 16px;
+                padding: 4px;
+            }
+        }
+        .todo-descriptors:nth-child(4){
+            display: grid;
+            grid-template-rows: auto auto;
+            label{
+                margin-bottom: 1rem;
+            }
+        }
+        textarea{
+            resize: none;
+            padding: 8px;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.App {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid beige;
+  margin: 0;
+  background-color: #f6f6f6;
+  @font-face {
+    font-family: 'Nunito Sans';
+    src: url('../assets/Nunito_Sans/static/NunitoSans_10pt-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Define Nunito Sans Bold */
+  @font-face {
+      font-family: 'Nunito Sans';
+      src: url('../assets/Nunito_Sans/static/NunitoSans_10pt-Bold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Nunito Sans';
+    src: url('../assets/Nunito_Sans/static/NunitoSans_10pt-SemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+  :root{
+    --font-nunito-regular: 'Nunito Sans', sans-serif;
+    --font-nunito-bold: 'Nunito Sans', sans-serif;
+    --font-nunito-semibold: 'Nunito Sans', sans-serif;
+  }
+  .todo-header{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    display: grid;
+    padding: 1.5rem;
+    grid-template-columns: 50% 50%;
+    font-size: 16px;
+    font-family: var(--font-nunito-bold);
+    #appName{
+      margin-bottom: 0rem;
+    }
+    #logo{
+      text-align: right;
+    }
+  }
+  .todo-body{
+    height: auto;
+    width: 70%;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 10px 10px 5px 0 #4E535A;
+    padding: 1.5rem;
+    #addTodoRow{
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      #addIcon{
+        width: 5%;
+        background-image: url(../assets/add-icon.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      #clickText{
+        font-family: 'Nunito_Sans', sans-serif;
+        color: #747487;
+        font-weight: 500;
+        font-size: 16px;
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+

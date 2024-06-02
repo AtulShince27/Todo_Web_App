@@ -1,0 +1,54 @@
+.todo-item{
+    display: grid;
+    grid-template-columns: 5% 60% 25% 10%;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #9FA5BA;
+    #markComplete{
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+        appearance: none;
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 8px;
+        border: 1px solid black;
+    }
+    #markComplete:hover{
+        background-color: #eee;
+    }
+    #markComplete:checked{
+        background-image: url(../assets/checkmark.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+    }
+    #completionStatus{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        #progressText{
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            background-color: #5567E3;
+            padding: 0px 10px;
+            height: 50%;
+        }
+        #offcanvasEl{
+            color: #7C8DC1;
+            font-weight: 500;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+    }
+}
+.todo-item:hover{
+    background-color: #E3E7EF;
+}
