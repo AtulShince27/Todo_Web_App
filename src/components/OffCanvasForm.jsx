@@ -15,8 +15,8 @@ function OffCanvasExample({ text, title, status, date, id, description, ...props
 
   useEffect(() => {
     // Initialize todo state with props
-    setTodo({ title, date, status, description: todo.description });
-  }, [title, date, status]);
+    setTodo({ title, date, status, description });
+  }, [title, date, status, description, setTodo]);
 
   const handleClose = async () => {
     try {
@@ -32,6 +32,7 @@ function OffCanvasExample({ text, title, status, date, id, description, ...props
       }
     }
   };
+
   const handleShow = () => setShow(true);
 
   const handleClick = async () => {
@@ -40,6 +41,11 @@ function OffCanvasExample({ text, title, status, date, id, description, ...props
     console.log(res);
     handleClose();
   }
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setTodo(prevTodo => ({ ...prevTodo, [name]: value }));
+  };
 
   return (
     <>
@@ -64,7 +70,7 @@ function OffCanvasExample({ text, title, status, date, id, description, ...props
             <div className='todo-descriptors'>
               <label htmlFor="dueDate">Due Date</label>
               <div>
-                <input type="date" id='dueDate' name='dueDate' value={date}/> 
+                <input type="date" id='dueDate' name='dueDate' value={date} onChange={handleInputChange}/> 
               </div>
             </div>
             <div className='todo-descriptors'>
@@ -106,11 +112,11 @@ function OffCanvasExample({ text, title, status, date, id, description, ...props
   );
 }
 
-function OffcanvasForm({text, title, status, date, id}) {
+function OffcanvasForm({text, title, status, date, id, description}) {
   return (
     <div className='offcanvas-btn'>
       {['end'].map((placement, idx) => (
-        <OffCanvasExample key={idx} placement={placement} name={placement} text={text} title={title} status={status} date={date} id={id} />
+        <OffCanvasExample key={idx} placement={placement} name={placement} text={text} title={title} status={status} date={date} id={id} description={description} />
       ))}
     </div>
   );

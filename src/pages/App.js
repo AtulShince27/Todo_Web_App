@@ -59,7 +59,7 @@ function AppContainer() {
       <div className='todo-body'>
       <div id='todoList'>
           {todos.map((todo, index) => (
-            <TodoItem key={index} title={todo.title} date={todo.date} status={todo.status} id={todo.id}/>
+            <TodoItem key={index} title={todo.title} date={todo.date} status={todo.status} id={todo.id} description={todo.description}/>
           ))}
         </div>
       {/* On Click Change the Modal Visibility */}
