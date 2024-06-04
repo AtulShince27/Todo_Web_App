@@ -8,6 +8,9 @@ import { deleteTodo } from '../api/todoAPI';
 import { useRecoilState } from 'recoil';
 import { updateTodo } from '../api/todoAPI';
 import { todoState } from '../store/todoStates';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 function OffCanvasExample({ text, title, status, date, id, description, ...props }) {
   const [show, setShow] = useState(false);
@@ -15,7 +18,7 @@ function OffCanvasExample({ text, title, status, date, id, description, ...props
 
   useEffect(() => {
     // Initialize todo state with props
-    setTodo({ title, date, status, description });
+    setTodo({ title, date: new Date(date), status, description });
   }, [title, date, status, description, setTodo]);
 
   const handleClose = async () => {
@@ -42,9 +45,17 @@ function OffCanvasExample({ text, title, status, date, id, description, ...props
     handleClose();
   }
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setTodo(prevTodo => ({ ...prevTodo, [name]: value }));
+  const handleDateChange = (date) => {
+    setTodo(prevTodo => ({ ...prevTodo, date }));
+  };
+
+  // const handleDateClick = (event) => {
+  //   event.stopPropagation();
+  // };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    handleClose();
   };
 
   return (
@@ -66,11 +77,17 @@ function OffCanvasExample({ text, title, status, date, id, description, ...props
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <form id='descriptor-form'>
+          <form id='descriptor-form' onSubmit={handleFormSubmit}>
             <div className='todo-descriptors'>
               <label htmlFor="dueDate">Due Date</label>
               <div>
-                <input type="date" id='dueDate' name='dueDate' value={date} onChange={handleInputChange}/> 
+                <DatePicker
+                    selected={todo.date}
+                    onChange={handleDateChange}
+                    dateFormat="yyyy-MM-dd"
+                    id='dueDate'
+                    name='dueDate'
+                  />
               </div>
             </div>
             <div className='todo-descriptors'>

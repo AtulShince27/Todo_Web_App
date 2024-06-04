@@ -20,8 +20,8 @@
         width: 100%;
         display: grid;
         grid-template-columns: 50% 50%;
-        padding: 1rem;
-        border-bottom: 1px solid black;
+        padding: 1.5rem 0rem;
+        // border-bottom: 1px solid black;
         #statusCol{
             display: grid;
             grid-template-columns: 20% 80%;

@@ -18,6 +18,13 @@ const DescriptionEditor = ({id}) => {
   };
 
 
+  useEffect(() => {
+    // Access the Quill instance directly if needed
+    if (quillRef.current) {
+      const quillInstance = quillRef.current.getEditor();
+      // You can now use the quillInstance for additional customization or manipulation
+    }
+  }, []);
 
   return (
     <div className="description-editor">

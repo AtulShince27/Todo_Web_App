@@ -7,7 +7,7 @@ function TodoItem({ id, title, date, status, description }) {
   const [isHovered, setIsHovered] = useState(false);
   const titleText = title;
   const statusText = status;
-  const dateText = date;
+  const dateText = date.split('T')[0];
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -55,7 +55,7 @@ function TodoItem({ id, title, date, status, description }) {
             </div>
           </div>
           <div>
-            {date}
+            {dateText}
           </div>
       </div>
     </div>
