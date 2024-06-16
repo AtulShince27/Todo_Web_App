@@ -25,7 +25,6 @@ function CustomModal({ addTodo, closeModal }) {
     // Convert date to ISO string with time set to 00:00:00.000Z
     // const isoDateString = new Date(date).toISOString().split('T')[0] + 'T00:00:00.000Z';
 
-    console.log(date, typeof(date));
     const newTodo = { title, date, status };
     addTodo(newTodo);
     const dataToSend = {

@@ -1,9 +1,22 @@
 .todo-item{
     display: grid;
-    grid-template-columns: 5% 60% 25% 10%;
+    grid-template-columns: 5% 5% 60% 20% 10%;
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid #9FA5BA;
+    touch-action: none;
+    #dragDropImg{
+        width: 50%;
+    }
+    #inlineEditCol{
+        #listItemEdit{
+            font-size: 24px;
+            font-weight: 500;
+            border: 0px;
+            background-color: transparent;
+        }
+
+    }
     #markComplete{
         width: 25px;
         height: 25px;
@@ -50,5 +63,5 @@
     }
 }
 .todo-item:hover{
-    background-color: #E3E7EF;
+    background-color:#f3f4f7 ;
 }

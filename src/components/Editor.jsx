@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import '../styles/DescriptionEditor.scss';
@@ -6,16 +6,21 @@ import { useRef } from 'react';
 import { useRecoilState } from 'recoil';
 import { todoState } from '../store/todoStates';
 
-const DescriptionEditor = ({id}) => {
+// import { openDB, getItem, setItem } from '../utils/indexedDB';
+
+const DescriptionEditor = ({ id, description }) => {
   const [todo, setTodo] = useRecoilState(todoState(id));
   const quillRef = useRef(null);
 
-  const handleChange = (html) => {
-    setTodo(prevTodo => ({
-      ...prevTodo,
-      description: html
-    }));
-  };
+  const handleChange = async (html) => {
+    console.log(html)
+    const dataToSend = {
+      ...todo,
+      description: html,
+    }
+
+    setTodo(dataToSend);
+};
 
 
   useEffect(() => {
@@ -58,3 +63,5 @@ DescriptionEditor.formats = [
 ];
 
 export default DescriptionEditor;
+
+

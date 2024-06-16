@@ -13,15 +13,12 @@
 .offcanvas-form{
     width: 35% !important;
     /* OffCanvasForm.scss */
-    .offcanvas-header .btn-close {
-        display: none;
-    }
     .todo-status-bar{
         width: 100%;
         display: grid;
         grid-template-columns: 50% 50%;
-        padding: 1.5rem 0rem;
-        // border-bottom: 1px solid black;
+        padding: 1.5rem;
+        box-shadow: 0px 4px 4px lightgray;
         #statusCol{
             display: grid;
             grid-template-columns: 20% 80%;
@@ -43,6 +40,9 @@
                 align-items: center;
             }
         }
+    .offcanvas-header .btn-close {
+        display: none;
+    }
         #statusCol:hover{
             background-color: #1C1E2E;
             #tickIcon{
@@ -67,6 +67,13 @@
             display: grid;
             grid-template-columns: 20% 80%;
             margin-bottom: 1rem;
+            label{
+                color: #7C8DC1;
+                font-weight: 500;
+            }
+        }
+        .todo-descriptors:nth-child(1) #dueDate{
+            border: none;
         }
         .todo-descriptors:nth-child(3){
             label{
@@ -85,6 +92,8 @@
             grid-template-rows: auto auto;
             label{
                 margin-bottom: 1rem;
+                color: #7C8DC1;
+                font-weight: 500;
             }
         }
         textarea{
@@ -92,4 +101,10 @@
             padding: 8px;
         }
     }
+}
+h3{
+    color: #404965;
+}
+#priorityInput{
+    border: none;
 }

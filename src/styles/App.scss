@@ -5,6 +5,7 @@
   border: 1px solid beige;
   margin: 0;
   background-color: #f6f6f6;
+  font-family: 'Nunito Sans', sans-serif;
   @font-face {
     font-family: 'Nunito Sans';
     src: url('../assets/Nunito_Sans/static/NunitoSans_10pt-Regular.ttf');
@@ -47,6 +48,12 @@
     }
     #logo{
       text-align: right;
+      img{
+      width: 25%;
+      }
+      h1{
+        font-weight: 700;
+      }
     }
   }
   .todo-body{
@@ -60,11 +67,12 @@
     box-shadow: 10px 10px 5px 0 #4E535A;
     padding: 1.5rem;
     #addTodoRow{
+      padding: 0px 4.5rem;
       display: flex;
       gap: 1rem;
       margin-top: 1rem;
       #addIcon{
-        width: 5%;
+        width: 2.5%;
         background-image: url(../assets/add-icon.png);
         background-repeat: no-repeat;
         background-size: contain;
