@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8080/', // Updated port
+  // baseURL: 'http://localhost:8080/', // Updated port
+  baseURL: 'http://3.81.134.14:8080',
 });
 
 // The rest of your API methods remain the same
